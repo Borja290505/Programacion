@@ -22,7 +22,8 @@ public class Ejercicio31 {
             }
         }
 
-        System.out.println("\nMáximo: " + maximo);
+        System.out.println("");
+        System.out.println("Máximo: " + maximo);
         System.out.println("Mínimo: " + minimo);
     }
 }
