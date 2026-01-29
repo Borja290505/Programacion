@@ -23,7 +23,7 @@ public class Concesionario {
 
     public void mostrarVehiculos(){
         for(Vehiculo v : vehiculos){
-            v.describirVehiculo();
+            System.out.println(v.describirVehiculo());
         }
     }
 
@@ -34,7 +34,7 @@ public class Concesionario {
         Vehiculo masAntiguo = vehiculos.get(0);
         for(Vehiculo v : vehiculos){
 
-            if(v.cacularAntiguedad() < masAntiguo.cacularAntiguedad()) {
+            if(v.cacularAntiguedad() > masAntiguo.cacularAntiguedad()) {
                 masAntiguo = v;
             }
         }
@@ -44,8 +44,13 @@ public class Concesionario {
     public ArrayList<Vehiculo> buscaValor(String busqueda){
         ArrayList<Vehiculo> filtrado  = new ArrayList<>();
         for(Vehiculo v : vehiculos){
-            String tipo = v.getClass().getSimpleName();
-            if(v.getMarca().equalsIgnoreCase(tipo) || tipo.equalsIgnoreCase(busqueda)){
+            if(v.getMarca().equalsIgnoreCase(busqueda) || v.getModelo().equalsIgnoreCase(busqueda) ){
+                filtrado.add(v);
+            } else if (busqueda.equalsIgnoreCase("coche") && v instanceof Coche) {
+                filtrado.add(v);
+            }else if (busqueda.equalsIgnoreCase("motocicleta") && v instanceof Motocicleta) {
+                filtrado.add(v);
+            }else if (busqueda.equalsIgnoreCase("camion") && v instanceof Camion) {
                 filtrado.add(v);
             }
         }

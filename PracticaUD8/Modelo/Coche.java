@@ -12,8 +12,14 @@ public class Coche extends Vehiculo {
         this.tipoCombustible = tipoCombustible;
     }
 
+
     @Override
-    public void describirVehiculo() {
-        System.out.println("El vehiculo tiene: " + numeroPuertas + " puertas y usa: " + tipoCombustible + " como combustible");
+    public String describirVehiculo() {
+        return super.describirVehiculo() + " tiene: " + numeroPuertas + " puertas y usa: " + tipoCombustible + " como combustible";
+    }
+
+    @Override
+    public String toString() {
+        return describirVehiculo();
     }
 }

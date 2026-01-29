@@ -11,7 +11,11 @@ public class Motocicleta extends Vehiculo{
     }
 
     @Override
-    public void describirVehiculo() {
-        System.out.println("Este vehiculo utiliza: " + cilindrada + " como cilintrada y es una moto de: " + tipoMoto);
+    public String describirVehiculo() {
+        return super.describirVehiculo() + " utiliza: " + cilindrada + " como cilintrada y es una moto de: " + tipoMoto;
+    }
+    @Override
+    public String toString() {
+        return describirVehiculo();
     }
 }

@@ -31,10 +31,10 @@ public class Vehiculo {
         this.precio = precio;
     }
 
-    public void describirVehiculo(){
-        System.out.println("Vehículo marca " + marca + ", modelo: " + modelo +
+    public String describirVehiculo(){
+        return "Vehículo marca " + marca + ", modelo: " + modelo +
                 ", año: " + anioFabricacion + ", matrícula: " + matricula +
-                ", precio:" + precio);
+                ", precio:" + precio + "€";
     }
 
 
@@ -81,5 +81,10 @@ public class Vehiculo {
 
     public void setMarca(String marca) {
         this.marca = marca;
+    }
+
+    @Override
+    public String toString() {
+        return describirVehiculo();
     }
 }

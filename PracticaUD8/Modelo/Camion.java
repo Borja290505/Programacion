@@ -11,7 +11,11 @@ public class Camion extends Vehiculo{
     }
 
     @Override
-    public void describirVehiculo() {
-        System.out.println("Este vehiculo tiene una carga maxima de: " + capacidadCarga + " y tiene " + numeroEjes + " ejes");
+    public String describirVehiculo() {
+        return super.describirVehiculo() + " tiene una carga maxima de: " + capacidadCarga + " y tiene " + numeroEjes + " ejes";
+    }
+    @Override
+    public String toString() {
+        return describirVehiculo();
     }
 }
